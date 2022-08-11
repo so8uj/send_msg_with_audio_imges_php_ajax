@@ -1,0 +1,230 @@
+*,p{
+    margin: 0;
+    padding: 0;
+}
+body{
+    box-sizing: border-box;
+}
+.chat__body{
+    width: 500px;
+}
+.chat-box-container {
+    position: relative;
+    height: 100vh;
+    background: #ddd;
+    padding: 65px 30px 175px 30px;
+    overflow-y: scroll;
+}
+.chat-box-container::-webkit-scrollbar {
+    display: none;
+}
+.caht-box-header{
+    background: #2d3484;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-weight: 500;
+    position: fixed;
+    width: 500px;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 55px;
+}
+.caht-box-footer{
+    border-top: 1px solid #2d3484;
+    color: #fff;
+    padding: 15px;
+    font-weight: 500;
+    position: fixed;
+    width: 500px;
+    z-index: 1;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ddd;
+    height: 165px;
+    margin: auto;
+}
+.selected_content{
+    display: none;
+}
+.remove_preview_btn {
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background: transparent;
+    color: #fff;
+    margin-left: 5px;
+}
+.remove_preview_btn:hover{
+    color: #cbf3ff;
+}
+.media_box img{
+    cursor: pointer;
+}
+
+.send_chat_btn button{
+    width: 150px;
+    border-radius: 13px;
+}
+.input_box textarea{
+    border: 1px solid rgb(90, 90, 90);
+    background: transparent;
+}
+.input_box textarea:focus{
+    border: 1px solid rgb(90, 90, 90);
+    background: transparent;
+    box-shadow: none;
+}
+.record_btn{
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.chat_item {
+    text-align: right;
+    margin-bottom: 55px;
+    position: relative;
+    background: #0d6efd;
+    border-radius: 10px;
+    padding: 15px;
+}
+span.time {
+    position: absolute !important;
+    font-size: 12px;
+    left: 10px;
+    bottom: 5px;
+    color: #e0e0e0;
+}
+.chat_item:first-child{
+    margin-top: 20px;
+}
+.chat_item span , .chat_item img{
+    
+    color: #fff;
+    /* position: relative; */
+}
+.chat_item.has_img span {
+    display: block;
+}
+.chat_item img{
+    margin: auto;
+}
+.chat_item::before {
+    content: '';
+    background: #0d6efd;
+    height: 100px;
+    width: 75px;
+    position: absolute;
+    clip-path: polygon(54% 29%, 66% 53%, 42% 39%);
+    right: -5px;
+    bottom: -60px;
+}
+
+.chat_item.has_record audio{
+    width: 100%;
+}
+.chat_item.has_img::before{
+    bottom: -60px;
+}
+.chat_item.has_record::before{
+    background: #0d6efd;
+}
+audio::-webkit-media-controls-panel {
+    background: #56AEFF;
+
+}
+
+.selected_content {
+    background: #2d3484c7;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 4;
+    bottom: 165px;
+}
+.selected_content::before {
+    background: #2d3484c7;
+    clip-path: polygon(50% 100%, 2% 37%, 100% 36%);
+    position: absolute;
+    height: 20px;
+    width: 30px;
+    content: '';
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.user__name{
+    width: 500px;
+    background: #ddd;
+    z-index: 99;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: .3s;
+}
+.rmv_row a{
+    color: #fff;
+    text-decoration: none;
+}
+.rmv_row a:hover .table_remove_sell{
+    background: red !important;
+}
+
+.table{
+    color: #fff;
+    border: 0!important;
+    border-bottom-width: 0 !important;
+    border-collapse:unset;
+}
+.table tr td{
+    border-radius: 10px;
+}
+small.admin_time {
+    position: absolute;
+    bottom: 6px;
+    left: 10px;
+}
+.table tr td span{
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+.table tr{
+    margin-bottom: 20px;
+}
+.table_primary_sell{
+    background: #415c6e !important;
+}
+.table_picture_sell{
+    background: #f8544a !important;
+}
+.table_msg_sell{
+    background: #00a8fd !important;
+}
+.table_audio_sell{
+    background: #00ad99 !important;
+}
+.table_optics_sell{
+    background: #a5b5b5 !important;
+}
+.table_remove_sell{
+    background: #64c372 !important;
+}
+
+/* resposive css */
+@media screen and (max-width:499px) {
+    .chat__body,.caht-box-header,.caht-box-footer {
+        width: 100%;
+    }
+}
